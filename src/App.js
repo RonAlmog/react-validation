@@ -9,6 +9,7 @@ import Navigation from "./components/navbar";
 import Contact from "./pages/contact";
 import State from "./pages/state";
 import UseReducer from "./pages/usereducer";
+import UseEffect from "./pages/useeffect";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/state" element={<State />} />
           <Route path="/reducer" element={<UseReducer />} />
+          <Route path="/effect" element={<UseEffect />} />
         </Routes>
       </Container>
     </div>
