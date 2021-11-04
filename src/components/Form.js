@@ -3,6 +3,7 @@ import "../App.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import Button from "react-bootstrap/Button";
 
 const schema = yup.object().shape({
   firstname: yup.string().required("do not forget to state your name!"),
@@ -61,20 +62,21 @@ const Form = () => {
           />
           <p>{errors.age?.message}</p>
           <input
-            type="text"
+            type="password"
             name="password"
             placeholder="Password"
             {...register("password")}
           />
           <p>{errors.password?.message}</p>
           <input
-            type="text"
+            type="password"
             name="confirmPassword"
             placeholder="Confirm Password"
             {...register("confirmPassword")}
           />
           <p>{errors.confirmPassword && "password does not match!"}</p>
           <input type="submit" id="submit" />
+          <Button>Hey</Button>
         </form>
       </div>
     </div>
