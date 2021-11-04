@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Toast from "react-bootstrap/Toast";
 
 const schema = yup.object().shape({
   firstname: yup.string().required("do not forget to state your name!"),
@@ -29,57 +31,71 @@ const Form = () => {
     console.log("data", data);
   };
   return (
-    <div className="Form">
-      <div className="title">SignUp</div>
-      <div className="inputs">
-        <form onSubmit={handleSubmit(submitForm)}>
-          <input
-            type="text"
-            name="firstname"
-            placeholder="First Name..."
-            {...register("firstname")}
-          />
-          <p>{errors.firstname?.message}</p>
-          <input
-            type="text"
-            name="lastname"
-            placeholder="Last Name..."
-            {...register("lastname")}
-          />
-          <p>{errors.lastname?.message}</p>
-          <input
-            type="text"
-            name="email"
-            placeholder="Email..."
-            {...register("email")}
-          />
-          <p>{errors.email?.message}</p>
-          <input
-            type="text"
-            name="age"
-            placeholder="Age"
-            {...register("age")}
-          />
-          <p>{errors.age?.message}</p>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            {...register("password")}
-          />
-          <p>{errors.password?.message}</p>
-          <input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            {...register("confirmPassword")}
-          />
-          <p>{errors.confirmPassword && "password does not match!"}</p>
-          <input type="submit" id="submit" />
-          <Button>Hey</Button>
-        </form>
+    <Card>
+      <div className="Form">
+        <Card.Header>
+          <Card.Title>Sign Up</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">
+            to become a member of our community
+          </Card.Subtitle>
+        </Card.Header>
+
+        <Card.Body>
+          <div className="inputs">
+            <form onSubmit={handleSubmit(submitForm)}>
+              <input
+                type="text"
+                name="firstname"
+                placeholder="First Name..."
+                {...register("firstname")}
+              />
+              <p>{errors.firstname?.message}</p>
+              <input
+                type="text"
+                name="lastname"
+                placeholder="Last Name..."
+                {...register("lastname")}
+              />
+              <p>{errors.lastname?.message}</p>
+
+              <input
+                type="text"
+                name="email"
+                placeholder="Email..."
+                {...register("email")}
+              />
+              <p>{errors.email?.message}</p>
+
+              <input
+                type="text"
+                name="age"
+                placeholder="Age"
+                {...register("age")}
+              />
+              <p>{errors.age?.message}</p>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                {...register("password")}
+              />
+              <p>{errors.password?.message}</p>
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                {...register("confirmPassword")}
+              />
+              <p>{errors.confirmPassword && "password does not match!"}</p>
+
+              <Button type="submit" id="submit">
+                Submit
+              </Button>
+            </form>
+          </div>
+        </Card.Body>
       </div>
-    </div>
+    </Card>
   );
 };
 
