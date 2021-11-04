@@ -19,6 +19,9 @@ const Navigation = () => {
           <Nav.Item>
             <Nav.Link href="/state">State</Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/reducer">Reducer</Nav.Link>
+          </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

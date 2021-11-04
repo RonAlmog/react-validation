@@ -8,6 +8,7 @@ import About from "./pages/about";
 import Navigation from "./components/navbar";
 import Contact from "./pages/contact";
 import State from "./pages/state";
+import UseReducer from "./pages/usereducer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/state" element={<State />} />
+          <Route path="/reducer" element={<UseReducer />} />
         </Routes>
       </Container>
     </div>
