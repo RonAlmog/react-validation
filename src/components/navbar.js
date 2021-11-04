@@ -28,6 +28,9 @@ const Navigation = () => {
           <Nav.Item>
             <Nav.Link href="/ref">Ref</Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/imperative">Imperative</Nav.Link>
+          </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
