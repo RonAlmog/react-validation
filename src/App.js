@@ -12,6 +12,7 @@ import UseReducer from "./pages/usereducer";
 import UseEffect from "./pages/useeffect";
 import UseRef from "./pages/useref";
 import Imperative from "./pages/imperative";
+import Context from "./pages/context";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/effect" element={<UseEffect />} />
           <Route path="/ref" element={<UseRef />} />
           <Route path="/imperative" element={<Imperative />} />
+          <Route path="/context" element={<Context />} />
         </Routes>
       </Container>
     </div>
