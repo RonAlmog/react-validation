@@ -10,6 +10,7 @@ import Contact from "./pages/contact";
 import State from "./pages/state";
 import UseReducer from "./pages/usereducer";
 import UseEffect from "./pages/useeffect";
+import UseRef from "./pages/useref";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/state" element={<State />} />
           <Route path="/reducer" element={<UseReducer />} />
           <Route path="/effect" element={<UseEffect />} />
+          <Route path="/ref" element={<UseRef />} />
         </Routes>
       </Container>
     </div>
