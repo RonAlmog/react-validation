@@ -6,6 +6,7 @@ import * as yup from "yup";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Toast from "react-bootstrap/Toast";
+import Form from "react-bootstrap/Form";
 
 const schema = yup.object().shape({
   firstname: yup.string().required("do not forget to state your name!"),
@@ -19,7 +20,7 @@ const schema = yup.object().shape({
   password: yup.string().min(4).max(20).required(),
   confirmPassword: yup.string().oneOf([yup.ref("password"), null]),
 });
-const Form = () => {
+const Formx = () => {
   const {
     register,
     handleSubmit,
@@ -31,7 +32,7 @@ const Form = () => {
     console.log("data", data);
   };
   return (
-    <Card>
+    <Card className="float-left">
       <div className="Form">
         <Card.Header>
           <Card.Title>Sign Up</Card.Title>
@@ -43,50 +44,67 @@ const Form = () => {
         <Card.Body>
           <div className="inputs">
             <form onSubmit={handleSubmit(submitForm)}>
-              <input
-                type="text"
-                name="firstname"
-                placeholder="First Name..."
-                {...register("firstname")}
-              />
+              <Form.Group>
+                <Form.Label>First Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="firstname"
+                  placeholder="First Name..."
+                  {...register("firstname")}
+                />
+              </Form.Group>
               <p>{errors.firstname?.message}</p>
-              <input
-                type="text"
-                name="lastname"
-                placeholder="Last Name..."
-                {...register("lastname")}
-              />
-              <p>{errors.lastname?.message}</p>
+              <Form.Group>
+                <Form.Label>Last Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="lastname"
+                  placeholder="Last Name..."
+                  {...register("lastname")}
+                />
+                <p>{errors.lastname?.message}</p>
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="email"
+                  placeholder="Email..."
+                  {...register("email")}
+                />
+                <p>{errors.email?.message}</p>
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Age</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="age"
+                  placeholder="Age"
+                  {...register("age")}
+                />
+                <p>{errors.age?.message}</p>
+              </Form.Group>
+              <Form.Group>
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  {...register("password")}
+                />
+                <p>{errors.password?.message}</p>
+              </Form.Group>
 
-              <input
-                type="text"
-                name="email"
-                placeholder="Email..."
-                {...register("email")}
-              />
-              <p>{errors.email?.message}</p>
-
-              <input
-                type="text"
-                name="age"
-                placeholder="Age"
-                {...register("age")}
-              />
-              <p>{errors.age?.message}</p>
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                {...register("password")}
-              />
-              <p>{errors.password?.message}</p>
-              <input
-                type="password"
-                name="confirmPassword"
-                placeholder="Confirm Password"
-                {...register("confirmPassword")}
-              />
-              <p>{errors.confirmPassword && "password does not match!"}</p>
+              <Form.Group>
+                <Form.Label>Confirm Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  name="confirmPassword"
+                  placeholder="Confirm Password"
+                  {...register("confirmPassword")}
+                />
+                <p>{errors.confirmPassword && "password does not match!"}</p>
+              </Form.Group>
 
               <Button type="submit" id="submit">
                 Submit
@@ -99,4 +117,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Formx;
